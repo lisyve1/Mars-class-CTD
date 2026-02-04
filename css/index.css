@@ -1,0 +1,201 @@
+   /* ===== GLOBAL STYLES ===== */
+   img {
+       height: auto;
+       width: 100px;
+   }
+
+   body {
+       font-family: 'Poppins', sans-serif;
+       color: #333333;
+       margin: 0;
+       padding: 0 15px;
+       background-color: rgb(0, 128, 79);
+       cursor: none;
+   }
+
+   header,
+   section {
+       margin: 25px 0;
+       padding: 25px;
+       background: rgb(255, 255, 255);
+       border-radius: 10px;
+       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+   }
+
+
+   /* ===== NAVIGATION STYLES ===== */
+
+   header nav ul {
+       display: flex;
+       justify-content: center;
+       gap: 15px;
+       list-style: none;
+       padding: 0;
+   }
+
+
+   /* ===== TYPOGRAPHY ===== */
+
+   h1 {
+       text-align: center;
+       font-family: 'Tangerine', cursive;
+       font-size: 4rem;
+       font-weight: 700;
+       color: #8a4baf;
+       text-transform: normal;
+       margin: 50px;
+   }
+
+   h2 {
+       color: #6a3a8f;
+       font-size: 1.8rem;
+       margin-bottom: 20px;
+   }
+
+   /* ===== BACKGROUND VIDEO ===== */
+   /* ADDED: Section header comment */
+
+   .video-background {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       z-index: -1;
+       object-fit: cover;
+   }
+
+   /* SKILLS SECTION */
+   #skills {
+       display: grid;
+       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+       gap: 12px;
+   }
+
+   #skills div {
+       background: #f5f1ff;
+       padding: 12px;
+       border-radius: 6px;
+       border-left: 4px solid #8a4baf;
+       text-align: center;
+   }
+
+   /* EXPERIENCE SECTION */
+   #experience {
+       display: flex;
+       flex-direction: column;
+   }
+
+   #experience .experience-header {
+       display: flex;
+       align-items: center;
+       gap: 10px;
+   }
+
+
+   #experience .experience-date {
+       font-size: 0.9rem;
+       font-style: italic;
+   }
+
+   /* CONNECT SECTION */
+   #connect a {
+       background: #8a4baf;
+       color: white;
+       padding: 10px 20px;
+       margin-right: 15px;
+       text-decoration: none;
+       border-radius: 6px;
+       display: inline-block;
+   }
+
+   /* ===== CONNECT SECTION ===== */
+   #connect ul {
+       list-style: none;
+       padding: 0;
+       display: flex;
+       gap: 10px;
+   }
+
+   /* ===== INTERACTIVE UFO CURSOR ===== */
+   .cursor {
+       width: 40px;
+       height: 20px;
+       background: linear-gradient(135deg, #8a4baf, #4a0b7f);
+       border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+       position: fixed;
+       pointer-events: none;
+       z-index: 9999;
+       transition: transform 0.2s;
+       box-shadow: 0 0 10px rgba(138, 75, 175, 0.7);
+   }
+
+   .cursor::before {
+       content: '';
+       position: absolute;
+       top: -5px;
+       left: 50%;
+       transform: translateX(-50%);
+       width: 15px;
+       height: 8px;
+       background: #00ffff;
+       border-radius: 50%;
+       box-shadow: 0 0 8px #00ffff;
+   }
+
+   .cursor::after {
+       content: '';
+       position: absolute;
+       bottom: -9x;
+       left: 30%;
+       transform: translateX(-50%);
+       width: 30px;
+       height: 5px;
+       background: linear-gradient(90deg, transparent, #00ff51);
+       border-radius: 2px;
+   }
+
+   /* Tablet- changes */
+   @media (max-width: 768px) {
+       h1 {
+           font-size: 3rem;
+           /* Adjusted font size for tablets for small size */
+           margin: 30px;
+           /* Reduced margin for tablets */
+       }
+
+       /* Element 2: nav */
+       header nav ul {
+           gap: 30px;
+           padding: 20px 0;
+       }
+   }
+
+
+   /* DESKTOP STYLES (min-width: 992px) — 2 changes to 3 element */
+   @media (min-width: 992px) {
+
+       /* Element 1: h1 */
+       h1 {
+           font-size: 5rem;
+           /* change 1 */
+           letter-spacing: 2px;
+           /* change 2 */
+       }
+
+       /* Element 2: #skills */
+       #skills {
+           grid-template-columns: repeat(3, 1fr);
+           /* change 1 */
+           padding: 20px;
+           /* change 2 */
+       }
+
+       /* Element 3: connect buttons */
+       #connect a {
+           padding: 15px 30px;
+           /* change 1 */
+           font-size: 1.2rem;
+           /* change 2 */
+       }
+   }
