@@ -146,21 +146,56 @@
    .cursor::after {
        content: '';
        position: absolute;
-       bottom: -8px;
-       left: 50%;
+       bottom: -9x;
+       left: 30%;
        transform: translateX(-50%);
-       width: 20px;
-       height: 4px;
+       width: 30px;
+       height: 5px;
        background: linear-gradient(90deg, transparent, #00ff51);
        border-radius: 2px;
    }
 
-   /* Tablet-specific changes */
+   /* Tablet- changes */
    @media (max-width: 768px) {
        h1 {
            font-size: 3rem;
            /* Adjusted font size for tablets for small size */
            margin: 30px;
            /* Reduced margin for tablets */
+       }
+
+       /* Element 2: nav */
+       header nav ul {
+           gap: 30px;
+           padding: 20px 0;
+       }
+   }
+
+
+   /* DESKTOP STYLES (min-width: 992px) — 2 changes to 3 element */
+   @media (min-width: 992px) {
+
+       /* Element 1: h1 */
+       h1 {
+           font-size: 5rem;
+           /* change 1 */
+           letter-spacing: 2px;
+           /* change 2 */
+       }
+
+       /* Element 2: #skills */
+       #skills {
+           grid-template-columns: repeat(3, 1fr);
+           /* change 1 */
+           padding: 20px;
+           /* change 2 */
+       }
+
+       /* Element 3: connect buttons */
+       #connect a {
+           padding: 15px 30px;
+           /* change 1 */
+           font-size: 1.2rem;
+           /* change 2 */
        }
    }
