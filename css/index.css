@@ -66,6 +66,23 @@
    }
 
    /* SKILLS SECTION */
+   #skills ul {
+       list-style: none;
+       padding: 0;
+       display: flex;
+       gap: 15px;
+       justify-content: center;
+   }
+
+   #skills li {
+       font-size: medium;
+       background-color: #6a3a8f;
+       color: rgb(102, 255, 0);
+       padding: 0.5em 1em;
+       border-radius: 5px;
+       justify-content: center;
+   }
+
    #skills {
        display: grid;
        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
