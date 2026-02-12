@@ -6,19 +6,11 @@
 
    body {
        font-family: 'Poppins', sans-serif;
-<<<<<<< Updated upstream
-=======
-       background: #f0f0f5;
->>>>>>> Stashed changes
        color: #333333;
        margin: 0;
        padding: 0 15px;
        background-color: rgb(0, 128, 79);
-<<<<<<< Updated upstream
        cursor: none;
-=======
-       position: relative;
->>>>>>> Stashed changes
    }
 
    header,
@@ -73,16 +65,24 @@
        object-fit: cover;
    }
 
-<<<<<<< Updated upstream
-=======
-   header,
-   main {
-       position: relative;
-       z-index: 1;
+   /* SKILLS SECTION */
+   #skills ul {
+       list-style: none;
+       padding: 0;
+       display: flex;
+       gap: 15px;
+       justify-content: center;
    }
 
->>>>>>> Stashed changes
-   /* SKILLS SECTION */
+   #skills li {
+       font-size: medium;
+       background-color: #483a8f;
+       color: rgb(102, 255, 0);
+       padding: 0.5em 1em;
+       border-radius: 5px;
+       justify-content: center;
+   }
+
    #skills {
        display: grid;
        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -134,11 +134,7 @@
        gap: 10px;
    }
 
-<<<<<<< Updated upstream
    /* ===== INTERACTIVE UFO CURSOR ===== */
-=======
-   /* ===== UFO CURSOR ===== */
->>>>>>> Stashed changes
    .cursor {
        width: 40px;
        height: 20px;
@@ -167,24 +163,15 @@
    .cursor::after {
        content: '';
        position: absolute;
-<<<<<<< Updated upstream
        bottom: -9x;
        left: 30%;
        transform: translateX(-50%);
        width: 30px;
        height: 5px;
-=======
-       bottom: -8px;
-       left: 50%;
-       transform: translateX(-50%);
-       width: 20px;
-       height: 4px;
->>>>>>> Stashed changes
        background: linear-gradient(90deg, transparent, #00ff51);
        border-radius: 2px;
    }
 
-<<<<<<< Updated upstream
    /* Tablet- changes */
    @media (max-width: 768px) {
        h1 {
@@ -229,15 +216,3 @@
            /* change 2 */
        }
    }
-=======
-   /* body {
-       cursor: none;
-
-
-
-       @media (max-width: 768px) {
-           h1 {
-               font-size: 3rem;
-               margin: 30px;
-               Reduced margin for tablets */
->>>>>>> Stashed changes
