@@ -13,7 +13,7 @@ const date = new Date();
 //get update year//
 const thisYear = date.getFullYear();
 // get  current footer element//
-footer = document.querySelector('footer');
+// footer = document.querySelector('footer');
 
 //create a new <p> paragraph element//
 const copyright = document.createElement('p');
@@ -27,9 +27,11 @@ footer.style.textAlign = 'center';
 
 // Skills section//
 const skills = ["JavaScript", "HTML", "CSS", "Git", "GitHub", "React", "Node.js", "SQL"];
+console.log("skills ===> ", skills);
 
 //get the skills section//
 const skillsSection = document.getElementById('skills');
+console.log("skillsSection ===> ", skillsSection);
 
 //Select the empty ul element in the skills section//
 const skillsList = skillsSection.querySelector('ul');
@@ -60,7 +62,8 @@ function toggleMessageSection() {
 
 
 // click leave message submit button//
-const messageForm = document.querySelector("form[name='leave_messages");
+const messageForm = document.querySelector("form[name='Leave_Messages");
+console.log("messageForm ===> ", messageForm);
 
 //add event listener to the form submit event//
 messageForm.addEventListener('submit', function (event) {
@@ -84,7 +87,7 @@ messageForm.addEventListener('submit', function (event) {
 
 
     /// select the messages section//
-    const messagesSection = document.getElementById('Messages');
+    const messagesSection = document.getElementById('messages');
 
     /// select the ul element in the messages section//
     const messagesList = messagesSection.querySelector('ul');
@@ -94,7 +97,8 @@ messageForm.addEventListener('submit', function (event) {
 
     //set the innner text of the HTML//
     newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> wrote: <span>${userMessage}</span>`;
-
+    console.log("newMessage ===> ", newMessage);
+    messagesList.appendChild(newMessage);
 
     // create editing button//
     const editButton = document.createElement('button');
@@ -150,3 +154,4 @@ messageForm.addEventListener('submit', function (event) {
 
 
     });
+});
