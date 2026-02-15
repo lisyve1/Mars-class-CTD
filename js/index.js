@@ -159,17 +159,5 @@ messageForm.addEventListener('submit', function (event) {
         .then(data => {
             const repositories = data; // store JSON in variable
             console.log("Your repositories:", repositories);
-            const projectSection = document.getElementById('projects');
-            console.log("projectSection ===> ", projectSection);
-            const projectList = projectSection.querySelector('ul');
-            repositories.forEach(repo => {
-                const listItem = document.createElement('li');
-                const link = document.createElement('a');
-                link.href = repo.html_url;
-                link.target = '_blank';
-                link.innerText = repo.name;
-                listItem.appendChild(link);
-                projectList.appendChild(listItem);
-            });
         });
 });
