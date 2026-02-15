@@ -1,5 +1,3 @@
-
-
 // get body element//
 const body = document.body
 // footer element//
@@ -19,19 +17,19 @@ const thisYear = date.getFullYear();
 const copyright = document.createElement('p');
 
 //Set the inner HTML of your copyright element to display your name and the current year
-copyright.innerHTML = `\u00A9 Lissette Velec${thisYear}`;
-//Appredn the copyright element to the footer//
+copyright.innerHTML = `&copy; Lissette Velec ${thisYear}`;
+//Append the copyright element to the footer//
 footer.appendChild(copyright);
 //Center the text in the footer//
 footer.style.textAlign = 'center';
 
 // Skills section//
 const skills = ["JavaScript", "HTML", "CSS", "Git", "GitHub", "React", "Node.js", "SQL"];
-console.log("skills ===> ", skills);
+//console.log("skills ===> ", skills); 
 
 //get the skills section//
 const skillsSection = document.getElementById('skills');
-console.log("skillsSection ===> ", skillsSection);
+//console.log("skillsSection ===> ", skillsSection);
 
 //Select the empty ul element in the skills section//
 const skillsList = skillsSection.querySelector('ul');
@@ -49,9 +47,9 @@ for (let i = 0; i < skills.length; i++) {
 
 //==================== Section Form ========================//
 
-//tobleave a message form//
+//to show/hide a message form//
 function toggleMessageSection() {
-    const messageSection = document.getElementById('Messages');
+    const messageSection = document.getElementById('messages');
     const messagesList = messageSection.querySelector('ul');
     if (messagesList.children.length == 0) {
         messageSection.style.display = 'none';
@@ -62,14 +60,19 @@ function toggleMessageSection() {
 
 
 // click leave message submit button//
-const messageForm = document.querySelector("form[name='Leave_Messages");
+const messageForm = document.querySelector("form[name='Leave_Messages']");
 console.log("messageForm ===> ", messageForm);
+
+// const htmlElement = document.getElementById('contact');
+// htmlElement.addEventListener('click', function () {
+//     console.log("hello i'm a click")
+// })
+
 
 //add event listener to the form submit event//
 messageForm.addEventListener('submit', function (event) {
     //prevent the default form submission behavior//
     event.preventDefault();
-
 
     //retrive the values from the form fields//
 
@@ -77,14 +80,10 @@ messageForm.addEventListener('submit', function (event) {
     const userEmail = event.target.userEmail.value;
     const userMessage = event.target.userMessage.value;
 
-
-
     // log filled form values to the console//
     console.log('Name:', userName);
     console.log('Email:', userEmail);
     console.log('Message:', userMessage);
-
-
 
     /// select the messages section//
     const messagesSection = document.getElementById('messages');
@@ -95,63 +94,82 @@ messageForm.addEventListener('submit', function (event) {
     /// create a new li element to hold the message//
     const newMessage = document.createElement('li');
 
-    //set the innner text of the HTML//
+    //set the inner text of the HTML//
     newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> wrote: <span>${userMessage}</span>`;
     console.log("newMessage ===> ", newMessage);
-    messagesList.appendChild(newMessage);
 
-    // create editing button//
+    // create edit button//
     const editButton = document.createElement('button');
     editButton.innerText = 'Edit';
     editButton.className = 'edit-button';
     editButton.type = 'button';
 
+    // create remove button//
+    const removeButton = document.createElement('button');
+    removeButton.innerText = 'Remove';
+    removeButton.className = 'remove-button';
+    removeButton.type = 'button';
+
+    // event listener for remove button//
+    removeButton.addEventListener('click', function () {
+        // find the li//
+        const entry = removeButton.parentNode;
+        //remove li//
+        entry.remove();
+        //toggle if there are not more messages//
+        toggleMessageSection();
+    });
 
     // add click event listener to the edit button//
     editButton.addEventListener('click', function () {
         const entry = editButton.parentNode;
         const messageText = entry.querySelector('span');
-        const newTest = prompt('Edit your message:', messagepam.innerText);
-        if (newTest !== null) {
-            messageText.innerText = newTest;
+        const newText = prompt('Edit your message:', messageText.innerText);
+        if (newText !== null) {
+            messageText.innerText = newText;
         }
-
-
-        //Remove Bottom Creation//
-        const removeButton = document.createElement('button');
-        removeButton.innerText = 'Remove';
-        removeButton.className = 'remove-button';
-        removeButton.type = 'button';
-
-        // event listener for remove button//
-        removeButton.addEventListener('click', function () {
-
-            // find the li//
-            const entry = removeButton.parentNode;
-            //remove  li//
-            entry.remove();
-        });
-        // toggle if there are not more messages//
-        toggleMessageSection();
-
-
-        // Remove the li from the messages list//
-        entrysList.removeChild(li);
-
-        //append the remove button to the message item//
-        newMessage.appendChild(removeButton);
-
-        //append the message item to the messages list//
-        messagesList.appendChild(newMessageItem);
-
-        // toggle the message section visibility//
-        toggleMessageSection();
-
-
-        /// afer submit clear the form fields//
-        messageForm.reset();
-
-
-
     });
+
+    //append the edit button to the message item//
+    newMessage.appendChild(editButton);
+
+    //append the remove button to the message item//
+    newMessage.appendChild(removeButton);
+
+    //append the message item to the messages list//
+    messagesList.appendChild(newMessage);
+
+    // toggle the message section visibility//
+    toggleMessageSection();
+
+    /// after submit clear the form fields//
+    messageForm.reset();
+
+    //========= FETCH YOUR GITHUB REPOSITORIES=================//
+
+    // Replace this with YOUR GitHub username
+    const username = "lisyve1";
+
+    // Fetch request to GitHub API
+    // `https://api.github.com/users/${username}/repos`
+    // converts to this:
+    // https://api.github.com/users/lisyve1/repos
+    fetch(`https://api.github.com/users/${username}/repos`)
+        .then(response => response.json()) // convert response to JSON
+        .then(data => {
+            const repositories = data; // store JSON in variable
+            console.log("Your repositories:", repositories);
+            const projectSection = document.getElementById('projects');
+            console.log("projectSection ===> ", projectSection);
+            const projectList = projectSection.querySelector('ul');
+            repositories.forEach(repo => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = repo.html_url;
+                link.target = '_blank';
+                link.innerText = repo.name;
+                listItem.appendChild(link);
+                projectList.appendChild(listItem);
+            });
+        });
 });

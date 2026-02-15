@@ -11,14 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tangerine:wght@700&display=swap"
     rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!----<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> / -->
   <link rel="stylesheet" href="css/index.css" />
 
 </head>
 
 <body>
   <video class="video-background" id="video-background" autoplay muted loop>
-    <source src="video\bg.mp4" type="video/mp4">
+    <source src="video/bg.mp4" type="video/mp4">
   </video>
   <header>
     <nav>
@@ -69,11 +69,7 @@
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-
       </ul>
-      <section>
-
-      </section>
       <div class="project-item">
         <h3>Portfolio Website</h3>
         <p>A personal portfolio website to showcase my skills and projects.</p>
@@ -97,18 +93,12 @@
         <li><a href="https://www.linkedin.com/in/lissetteivelec/">LinkedIn</a></li>
         <li><a href="https://github.com/lisyve1">GitHub</a></li>
       </ul>
-      <section>
-
-
-        <section id="contact">
-          <h2>Contact Me</h2>
-          <p>If you'd like to get in touch, feel free to reach out via email or social media!</p>
-          <img src="https://i0.wp.com/www.saastr.com/wp-content/uploads/2025/01/IMG_7033.png" alt="Contact Me" />
-        </section>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, feel free to reach out via email or social media!</p>
+        <img src="https://i0.wp.com/www.saastr.com/wp-content/uploads/2025/01/IMG_7033.png" alt="Contact Me" />
+      </section>
   </main>
-  <section>
-
-  </section>
 
   <section id="form">
     <h2>Leave a Message</h2>
@@ -132,28 +122,28 @@
 
     </ul>
     <div id="messagesContainer"></div>
-    <!-- <footer>
+  </section>
+
+  <!-- <footer>
       <p>&copy; 2025 Lissette Velec. All rights reserved.</p>
     </footer> -->
-    <script>
+  <script>
 
 
-      // UFO cursor//
+    // UFO cursor//
 
-      var ufo = document.createElement("div");
-      ufo.className = "cursor";
-      document.body.appendChild(ufo);
+    var ufo = document.createElement("div");
+    ufo.className = "cursor";
+    document.body.appendChild(ufo);
 
-      // UFO  mouse movement
-      document.addEventListener("mousemove", (e) => {
-        ufo.style.left = e.screenX + "px";
-        ufo.style.top = e.screenY + "px";
-      });
-    </script>
-
-    <script src="js\index.js">
-
-    </script>
+    // UFO  mouse movement
+    document.addEventListener("mousemove", (e) => {
+      ufo.style.left = e.screenX + "px";
+      ufo.style.top = e.screenY + "px";
+    });
+  </script>
+  <script src="js/index.js"></script>
+  <script src="./js/fetch.js"></script>
 
 
 </body>
