@@ -11,7 +11,7 @@ fetch(`https://api.github.com/users/${username}/repos`)
         console.log("Your repositories:", repositories);
 
         // Get the projects section
-        const projectsList = document.querySelector('#projects ul');
+        const projectsList = document.querySelector('#projects ol');
 
         // Repositories to exclude from display
         const excludedRepos = ['PromineoTech.Test', 'test', 'test123'];
