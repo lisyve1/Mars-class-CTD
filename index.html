@@ -18,7 +18,7 @@
 
 <body>
   <video class="video-background" id="video-background" autoplay muted loop>
-    <source src="video\bg.mp4" type="video/mp4">
+    <source src="video/bg.mp4" type="video/mp4">
   </video>
   <header>
     <nav>
@@ -51,15 +51,6 @@
 
 
       <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>Node.js</li>
-        <li>Git</li>
-        <li>GitHub</li>
-
-
       </ul>
     </section>
 
@@ -105,17 +96,28 @@
 
     // UFO cursor//
 
-    var ufo = document.createElement("div");
+    const ufo = document.createElement("div");
     ufo.className = "cursor";
     document.body.appendChild(ufo);
 
-    // UFO  mouse movement
+    // UFO mouse movement — use clientX/Y (viewport-relative) for position:fixed element
+    // Throttle updates with requestAnimationFrame to avoid layout thrashing
+    let rafPending = false;
+    let mouseX = 0, mouseY = 0;
     document.addEventListener("mousemove", (e) => {
-      ufo.style.left = e.screenX + "px";
-      ufo.style.top = e.screenY + "px";
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!rafPending) {
+        rafPending = true;
+        requestAnimationFrame(() => {
+          ufo.style.left = mouseX + "px";
+          ufo.style.top = mouseY + "px";
+          rafPending = false;
+        });
+      }
     });
   </script>
-  <script src="js\index.js">
+  <script src="js/index.js">
 
   </script>
 
