@@ -60,7 +60,9 @@ function toggleMessageSection() {
 
 
 // click leave message submit button//
-const messageForm = document.querySelector("form[name='Leave_Messages']");
+const messageForm = document.querySelector("form[name='leave_message']");
+
+// fixing the erros. const messageForm = document.querySelector("form[name='Leave_Messages']");
 console.log("messageForm ===> ", messageForm);
 
 // const htmlElement = document.getElementById('contact');
@@ -75,10 +77,14 @@ if (messageForm) {
         event.preventDefault();
 
         //retrive the values from the form fields//
+        // fixing this errors
+        //         const userName = event.target.userName.value;
+        //         const userEmail = event.target.userEmail.value;
+        //         const userMessage = event.target.userMessage.value;
 
-        const userName = event.target.userName.value;
-        const userEmail = event.target.userEmail.value;
-        const userMessage = event.target.userMessage.value;
+        const userName = event.target.name.value;
+        const userEmail = event.target.email.value;
+        const userMessage = event.target.message.value;
 
         // log filled form values to the console//
         console.log('Name:', userName);
@@ -144,22 +150,6 @@ if (messageForm) {
 
         /// after submit clear the form fields//
         messageForm.reset();
-
-        //========= FETCH YOUR GITHUB REPOSITORIES=================//
-
-        // Replace this with YOUR GitHub username
-        const username = "lisyve1";
-
-        // Fetch request to GitHub API
-        // `https://api.github.com/users/${username}/repos`
-        // converts to this:
-        // https://api.github.com/users/lisyve1/repos
-        fetch(`https://api.github.com/users/${username}/repos`)
-            .then(response => response.json()) // convert response to JSON
-            .then(data => {
-                const repositories = data; // store JSON in variable
-                console.log("Your repositories:", repositories);
-            });
     });
 } else {
     console.error("Form not found. Check the form name attribute!");

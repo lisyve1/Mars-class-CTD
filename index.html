@@ -44,7 +44,7 @@
         determination guide everything I build.</p>
     </section>
 
-    <section id="skills">
+    <section center id="skills">
       <h2>Skills</h2>
       <ul></ul>
     </section>
@@ -85,15 +85,24 @@
 
   <section id="form">
     <h2>Leave a Message</h2>
-    <form name="Leave_Messages">
-      <label for="userName">Name:</label><br>
-      <input type="text" id="userName" name="userName" required><br><br>
+    <form name="leave_message">
+      <label for="usersName">Name:</label><br>
+      <!----- fixing this errros
+       <input type="text" id="userName" name="userName" required><br><br>-->
+      <input type="text" id="usersName" name="usersName" required>
 
-      <label for="userEmail">Email:</label><br>
-      <input type="email" id="userEmail" name="userEmail" required><br><br>
+      <label for="usersEmail">Email:</label><br>
+      <!-- fixing this errors 
+        <input type="email" id="userEmail" name="userEmail" required><br><br>-->
+      <input type="email" id="usersEmail" name="usersEmail" required>
 
-      <label for="userMessage">Message:</label><br>
-      <textarea id="userMessage" name="userMessage" rows="4" required></textarea><br><br>
+
+
+      <label for="usersMessage">Message:</label><br>
+      <!-- fixing this errors
+     <textarea id="userMessage" name="userMessage" rows="4" required></textarea><br><br>-->
+
+      <textarea id="usersMessage" name="usersMessage" rows="4" required></textarea>
 
       <input type="submit" value="Submit">
 
@@ -127,8 +136,6 @@
   </script>
   <script src="js/index.js"></script>
   <script src="./js/fetch.js"></script>
-
-
 </body>
 
 </html>
