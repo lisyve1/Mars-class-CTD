@@ -20,6 +20,9 @@
   <video class="video-background" id="video-background" autoplay muted loop>
     <source src="video/bg.mp4" type="video/mp4">
   </video>
+  <audio id="ocean-sound" autoplay loop volume="0.3">
+    <source src="audio/ocean.mp3" type="audio/mpeg">
+  </audio>
   <header>
     <nav>
       <ul>
@@ -27,9 +30,8 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="mailto:lissettevelec@gmail.com">Contact</a></li>
-        <li><a href="#connect">Connect</a></li>
-        <li><a href="#form">Leave a Message</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#form">Leave a Message</a></li>
       </ul>
     </nav>
     <h1>Lissette's Portfolio</h1>
@@ -44,16 +46,6 @@
     <section id="skills">
       <h2>Skills</h2>
       <ul>
-
-
-        <li>Web Development</li>
-        <li>Front-End Design</li>
-        <li>Responsive Design</li>
-        <li>Problem Solving</li>
-      </ul>
-
-
-      <ul>
         <li>HTML</li>
         <li>CSS</li>
         <li>JavaScript</li>
@@ -61,8 +53,6 @@
         <li>Node.js</li>
         <li>Git</li>
         <li>GitHub</li>
-
-
       </ul>
     </section>
 
@@ -87,17 +77,15 @@
       </div>
     </section>
 
-    <section id="connect">
-      <h2>Social Links</h2>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/lissetteivelec/">LinkedIn</a></li>
-        <li><a href="https://github.com/lisyve1">GitHub</a></li>
-      </ul>
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch, feel free to reach out via email or social media!</p>
-        <img src="https://i0.wp.com/www.saastr.com/wp-content/uploads/2025/01/IMG_7033.png" alt="Contact Me" />
-      </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>If you'd like to get in touch, feel free to reach out via email or social media!</p>
+      <div id="social-links">
+        <a href="https://www.linkedin.com/in/lissetteivelec/">LinkedIn</a>
+        <a href="https://github.com/lisyve1">GitHub</a>
+      </div>
+      <img src="https://i0.wp.com/www.saastr.com/wp-content/uploads/2025/01/IMG_7033.png" alt="Contact Me" />
+    </section>
   </main>
 
   <section id="form">
@@ -141,6 +129,12 @@
       ufo.style.left = e.screenX + "px";
       ufo.style.top = e.screenY + "px";
     });
+
+    // Ocean Sound Control
+    const oceanSound = document.getElementById("ocean-sound");
+    if (oceanSound) {
+      oceanSound.volume = 0.3; // Set volume to 50%
+    }
   </script>
   <script src="js/index.js"></script>
   <script src="./js/fetch.js"></script>
