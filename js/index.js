@@ -60,14 +60,13 @@ function toggleMessageSection() {
 
 
 // click leave message submit button//
-const messageForm = document.querySelector("form[name='leave_message']");
+const messageForm = document.querySelector("form[name='Leave_Messages']");
 console.log("messageForm ===> ", messageForm);
 
 // const htmlElement = document.getElementById('contact');
 // htmlElement.addEventListener('click', function () {
 //     console.log("hello i'm a click")
 // })
-
 
 //add event listener to the form submit event//
 if (messageForm) {
@@ -137,13 +136,9 @@ if (messageForm) {
         //append the remove button to the message item//
         newMessage.appendChild(removeButton);
 
-
-
         //append the message item to the messages list//
         messagesList.appendChild(newMessage);
-        newMessage.appendChild(editButton);
-        newMessage.appendChild(removeButton);
-        messagesList.appendChild(newMessage);
+
         // toggle the message section visibility//
         toggleMessageSection();
 
@@ -166,4 +161,6 @@ if (messageForm) {
                 console.log("Your repositories:", repositories);
             });
     });
+} else {
+    console.error("Form not found. Check the form name attribute!");
 }
