@@ -25,7 +25,7 @@ footer.style.textAlign = 'center';
 
 // Skills section//
 const skills = ["JavaScript", "HTML", "CSS", "Git", "GitHub", "React", "Node.js", "SQL"];
-//console.log("skills ===> ", skills); 
+//console.log("skills ===> ", skills);
 
 //get the skills section//
 const skillsSection = document.getElementById('skills');
