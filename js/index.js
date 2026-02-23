@@ -13,7 +13,8 @@ const date = new Date();
 //get update year//
 const thisYear = date.getFullYear();
 // get  current footer element//
-footer = document.querySelector('footer');
+//footer = document.querySelector('footer');
+
 
 //create a new <p> paragraph element//
 const copyright = document.createElement('p');
