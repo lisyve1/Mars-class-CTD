@@ -11,14 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tangerine:wght@700&display=swap"
     rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!----<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> / -->
   <link rel="stylesheet" href="css/index.css" />
 
 </head>
 
 <body>
   <video class="video-background" id="video-background" autoplay muted loop>
-    <source src="video\bg.mp4" type="video/mp4">
+    <source src="video/bg.mp4" type="video/mp4">
   </video>
   <header>
     <nav>
@@ -27,6 +27,8 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="mailto:lissettevelec@gmail.com">Contact</a></li>
+        <li><a href="#form">Leave a Message</a></li>
+        <li><a href="#experience">Experience</a></li>
       </ul>
     </nav>
     <h1>Lissette's Portfolio</h1>
@@ -35,72 +37,95 @@
   <main>
     <section id="about-me">
       <h2>About Me</h2>
-      <p>Hello! I'm Lissette, a passionate web developer student eager to create beautiful and functional websites.</p>
+      <p>Hi, I’m Lissette! I’m a web developer student who loves building websites that are both beautiful and
+        practical.
+        I enjoy solving problems, learning new technologies, and watching my skills grow with every project.
+        Creativity, curiosity, and determination guide everything I build.</p>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
+    <section center id="skills">
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
 
 
-        <li>Web Development</li>
-        <li>Front-End Design</li>
-        <li>Responsive Design</li>
-        <li>Problem Solving</li>
-      </ul>
+          <li>Web Development</li>
+          <li>Front-End Design</li>
+          <li>Responsive Design</li>
+          <li>Problem Solving</li>
 
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Node.js</li>
+          <li>Git</li>
+          <li>GitHub</li>
 
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>Node.js</li>
-        <li>Git</li>
-        <li>GitHub</li>
+        </ul>
+      </section>
 
-
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-
-      <div class="project-item">
-        <h3>Portfolio Website</h3>
-        <p>A personal portfolio website to showcase my skills and projects.</p>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="experience-item">
-        <div class="experience-header">
-          <h3>Web Developer Student</h3>
-          <p class="experience-date">12/12/2023</p>
+      <section id="projects">
+        <h2>Projects</h2>
+        <ol>
+        </ol>
+        <div class="project-item">
+          <h3>Portfolio Website</h3>
+          <p>A personal portfolio website to showcase my skills and projects.</p>
         </div>
-        <p>Creating my professional portfolio!</p>
-      </div>
-    </section>
+      </section>
 
-    <section id="connect">
-      <h2>Social Links</h2>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/lissetteivelec/">LinkedIn</a></li>
-        <li><a href="https://github.com/lisyve1">GitHub</a></li>
-      </ul>
-    </section>
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3>Web Developer Student</h3>
+            <p class="experience-date">12/12/2023</p>
+          </div>
+          <p>Creating my professional portfolio!</p>
+        </div>
+      </section>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>If you'd like to get in touch, feel free to reach out via email or social media!</p>
-      <img src="https://i0.wp.com/www.saastr.com/wp-content/uploads/2025/01/IMG_7033.png" alt="Contact Me" />
-    </section>
+      <section id="connect">
+        <h2>Social Links</h2>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/lissetteivelec/">LinkedIn</a></li>
+          <li><a href="https://github.com/lisyve1">GitHub</a></li>
+        </ul>
+        <section id="contact">
+          <h2>Contact Me</h2>
+          <p>If you'd like to get in touch, feel free to reach out via email or social media!</p>
+          <img src="https://i0.wp.com/www.saastr.com/wp-content/uploads/2025/01/IMG_7033.png" alt="Contact Me" />
+        </section>
   </main>
-  <footer>
-    <p>&copy; 2024 Lissette Velec. All rights reserved.</p>
-  </footer>
+
+  <section id="form">
+    <h2>Leave a Message</h2>
+    <form name="Leave_Messages">
+      <label for="userName">Name:</label><br>
+      <input type="text" id="userName" name="userName" required><br><br>
+
+      <label for="userEmail">Email:</label><br>
+      <input type="email" id="userEmail" name="userEmail" required><br><br>
+
+      <label for="userMessage">Message:</label><br>
+      <textarea id="userMessage" name="userMessage" rows="4" required></textarea><br><br>
+
+      <input type="submit" value="Submit">
+
+    </form>
+  </section>
+  <section id="messages">
+    <h2>Messages</h2>
+    <ul>
+
+    </ul>
+    <div id="messagesContainer"></div>
+  </section>
+
+  <!-- <footer>
+      <p>&copy; 2025 Lissette Velec. All rights reserved.</p>
+    </footer> -->
   <script>
+
 
 
     // UFO cursor//
@@ -115,11 +140,8 @@
       ufo.style.top = e.screenY + "px";
     });
   </script>
-  <script src="js\index.js">
-
-  </script>
-
-
+  <script src="js/index.js"></script>
+  <script src="./js/fetch.js"></script>
 </body>
 
 </html>
