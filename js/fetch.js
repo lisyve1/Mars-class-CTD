@@ -8,7 +8,6 @@ fetch(`https://api.github.com/users/${username}/repos`)
     .then(response => response.json()) // convert response to JSON
     .then(data => {
         const repositories = data; // store JSON in variable
-        console.log("Your repositories:", repositories);
 
         // Get the projects section
         const projectsList = document.querySelector('#projects ol');

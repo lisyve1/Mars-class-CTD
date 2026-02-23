@@ -1,9 +1,10 @@
 // get body element//
-const body = document.body
+const body = document.body;
 // footer element//
 const footer = document.createElement('footer');
 //append footer to body//
 body.appendChild(footer);
+
 
 //date object//
 const date = new Date();
@@ -25,11 +26,11 @@ footer.style.textAlign = 'center';
 
 // Skills section//
 const skills = ["JavaScript", "HTML", "CSS", "Git", "GitHub", "React", "Node.js", "SQL"];
-//console.log("skills ===> ", skills);
+
 
 //get the skills section//
 const skillsSection = document.getElementById('skills');
-//console.log("skillsSection ===> ", skillsSection);
+
 
 //Select the empty ul element in the skills section//
 const skillsList = skillsSection.querySelector('ul');
@@ -58,38 +59,26 @@ function toggleMessageSection() {
     }
 }
 
-
 // click leave message submit button//
 const messageForm = document.querySelector("form[name='leave_message']");
-
-// fixing the erros. const messageForm = document.querySelector("form[name='Leave_Messages']");
-console.log("messageForm ===> ", messageForm);
-
-// const htmlElement = document.getElementById('contact');
-// htmlElement.addEventListener('click', function () {
-//     console.log("hello i'm a click")
-// })
 
 //add event listener to the form submit event//
 if (messageForm) {
     messageForm.addEventListener('submit', function (event) {
+        console.log("event ===> ", event);
         //prevent the default form submission behavior//
         event.preventDefault();
 
-        //retrive the values from the form fields//
+        // retrive the values from the form fields
         // fixing this errors
-        //         const userName = event.target.userName.value;
-        //         const userEmail = event.target.userEmail.value;
-        //         const userMessage = event.target.userMessage.value;
+        const userName = event.target[0].value;
+        console.log("userName ===> ", userName);
+        console.log("helloooooooooo!!!!");
+        console.log("event ===> ", event);
+        // const userEmail = event.target.userEmail.value;
+        const userEmail = event.target[1].value;
 
-        const userName = event.target.name.value;
-        const userEmail = event.target.email.value;
-        const userMessage = event.target.message.value;
-
-        // log filled form values to the console//
-        console.log('Name:', userName);
-        console.log('Email:', userEmail);
-        console.log('Message:', userMessage);
+        const userMessage = event.target[2].value;
 
         /// select the messages section//
         const messagesSection = document.getElementById('messages');
@@ -102,7 +91,6 @@ if (messageForm) {
 
         //set the inner text of the HTML//
         newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> wrote: <span>${userMessage}</span>`;
-        console.log("newMessage ===> ", newMessage);
 
         // create edit button//
         const editButton = document.createElement('button');
