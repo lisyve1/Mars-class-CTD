@@ -11,15 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tangerine:wght@700&display=swap"
     rel="stylesheet" />
-  <!----<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> / -->
   <link rel="stylesheet" href="css/index.css" />
-
 </head>
 
 <body>
   <video class="video-background" id="video-background" autoplay muted loop>
     <source src="video/bg.mp4" type="video/mp4">
   </video>
+
   <header>
     <nav>
       <ul>
@@ -37,86 +36,70 @@
   <main>
     <section id="about-me">
       <h2>About Me</h2>
-      <p>Hi, I’m Lissette! I’m a web developer student who loves building websites that are both beautiful and
-        practical.
-        I enjoy solving problems, learning new technologies, and watching my skills grow with every project.
+      <p>Hi, I'm Lissette! I'm a web developer student who loves building websites that are both beautiful and
+        practical. I enjoy solving problems, learning new technologies, and watching my skills grow with every project.
         Creativity, curiosity, and determination guide everything I build.</p>
     </section>
 
-    <section center id="skills">
-      <section id="skills">
-        <h2>Skills</h2>
-        <ul>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul></ul>
+    </section>
 
+    <section id="projects">
+      <h2>Projects</h2>
+      <ol></ol>
+    </section>
 
-        </ul>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <ol>
-        </ol>
-        <div class="project-item">
-          <h3>Portfolio Website</h3>
-          <p>A personal portfolio website to showcase my skills and projects.</p>
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Web Developer Student</h3>
+          <p class="experience-date">2023 - Present</p>
         </div>
-      </section>
+        <p>Creating my professional portfolio and learning full-stack development!</p>
+      </div>
+    </section>
 
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Web Developer Student</h3>
-            <p class="experience-date">12/12/2023</p>
-          </div>
-          <p>Creating my professional portfolio!</p>
-        </div>
-      </section>
+    <section id="connect">
+      <h2>Connect With Me</h2>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/lissetteivelec/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/lisyve1" target="_blank">GitHub</a></li>
+      </ul>
+    </section>
 
-      <section id="connect">
-        <h2>Social Links</h2>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/lissetteivelec/">LinkedIn</a></li>
-          <li><a href="https://github.com/lisyve1">GitHub</a></li>
-        </ul>
-        <section id="contact">
-          <h2>Contact Me</h2>
-          <p>If you'd like to get in touch, feel free to reach out via email or social media!</p>
-          <img src="https://i0.wp.com/www.saastr.com/wp-content/uploads/2025/01/IMG_7033.png" alt="Contact Me" />
-        </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>If you'd like to get in touch, feel free to reach out via email or social media!</p>
+      <img src="https://i0.wp.com/www.saastr.com/wp-content/uploads/2025/01/IMG_7033.png" alt="Contact Me" />
+    </section>
   </main>
 
   <section id="form">
     <h2>Leave a Message</h2>
     <form name="leave_message">
-      <label for="userName">Name:</label><br>
-      <input type="text" id="userName" name="userName" required><br><br>
+      <label for="userName">Name:</label>
+      <input type="text" id="userName" name="userName" required>
 
-      <label for="userEmail">Email:</label><br>
-      <input type="email" id="userEmail" name="userEmail" required><br><br>
+      <label for="userEmail">Email:</label>
+      <input type="email" id="userEmail" name="userEmail" required>
 
-      <label for="userMessage">Message:</label><br>
-      <textarea id="userMessage" name="userMessage" rows="4" required></textarea><br><br>
+      <label for="userMessage">Message:</label>
+      <textarea id="userMessage" name="userMessage" rows="4" required></textarea>
 
       <input type="submit" value="Submit">
-
     </form>
   </section>
+
   <section id="messages">
     <h2>Messages</h2>
-    <ul>
-
-    </ul>
+    <ul></ul>
     <div id="messagesContainer"></div>
   </section>
 
-  <!-- <footer>
-      <p>&copy; 2025 Lissette Velec. All rights reserved.</p>
-    </footer> -->
   <script>
-
-
-
     // UFO cursor//
 
     var ufo = document.createElement("div");
@@ -130,6 +113,7 @@
     });
   </script>
   <script src="js/index.js"></script>
+  <script src="./js/fetch.js"></script>
 </body>
 
 </html>
