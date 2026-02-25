@@ -39,6 +39,32 @@ main {
     align-items: center;
 }
 
+/* Style "debugging" and "mars-class-cdt" */
+#projects ol li a[href*="debugging"],
+#projects ol li a[href*="mars-class"] {
+    background: #3498db;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* =============Blue ovals  ==========*/
+#projects ol li a[href*="debugging"],
+#projects ol li a[href*="mars-class"],
+#projects ol li a[href*="Mars-class"] {
+    background: #3498db;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
 
 /* ===== NAVIGATION STYLES ===== */
 
@@ -70,6 +96,8 @@ header nav ul li a:hover {
     border-bottom-color: #2980b9;
     transform: translateY(-2px);
 }
+
+
 
 
 /* ===== TYPOGRAPHY ===== */
@@ -123,7 +151,51 @@ p {
     object-fit: cover;
 }
 
-/* SKILLS SECTION */
+
+/* ===== SOCIAL LINKS STYLING - OVAL FORMAT LIKE SKILLS ===== */
+#connect ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+#connect ul li a {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.25);
+    transition: all 0.35s ease;
+    opacity: 0.85;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#connect ul li a:hover {
+    opacity: 1;
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* ======Optional: Adding changes======= */
+#connect ul li a i {
+    font-size: 1rem;
+}
+
+
+/*=============== SKILLS SECTION =================*/
 #skills {
     display: flex;
     flex-wrap: wrap;
@@ -170,7 +242,7 @@ p {
     box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
 }
 
-/* ABOUT ME SECTION */
+/* ============ABOUT ME SECTION ==================*/
 #about-me {
     background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(41, 128, 185, 0.15) 100%);
     padding: 30px;
@@ -192,7 +264,7 @@ p {
     font-weight: 600;
 }
 
-/* EXPERIENCE SECTION */
+/*============= EXPERIENCE SECTION=============== */
 #experience {
     display: flex;
     flex-direction: column;
@@ -226,16 +298,18 @@ p {
 }
 
 #experience .experience-date {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: #FFFFFF;
-    background: rgba(52, 152, 219, 0.3);
-    padding: 5px 12px;
+
+    background: #3498db;
+    color: white;
+    padding: 5px 15px;
     border-radius: 20px;
-    white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
 }
 
-/* PROJECTS SECTION */
+
+/*=========== PROJECTS SECTION============== */
 #projects ul {
     list-style: none;
     padding: 0;
@@ -266,7 +340,7 @@ p {
     color: #FFFFFF;
 }
 
-/* CONTACT SECTION */
+/* ==========CONTACT SECTION============== */
 #contact {
     text-align: center;
     background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(41, 128, 185, 0.15) 100%);
@@ -276,6 +350,13 @@ p {
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(214, 221, 222, 0.575);
 }
+
+/* ===== SHADOW BOX FOR PROJECTS AND CONTACT SECTIONS ===== */
+#projects,
+#contact {
+    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.5);
+}
+
 
 #contact:hover {
     transform: translateX(5px);
@@ -312,7 +393,7 @@ p {
     box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
 }
 
-/* FORM SECTION */
+/* =============FORM SECTION =================*/
 #form {
     text-align: center;
 }
@@ -385,7 +466,7 @@ p {
     transform: translateY(0);
 }
 
-/* MESSAGES SECTION */
+/* ==========MESSAGES SECTION============ */
 #messages {
     text-align: center;
 }
@@ -421,7 +502,7 @@ p {
     text-decoration: underline;
 }
 
-/* CUSTOM CURSOR */
+/* =========CUSTOM CURSOR====================== */
 .cursor {
     width: 40px;
     height: 20px;
