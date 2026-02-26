@@ -150,13 +150,14 @@ if (messageForm) {
 // Replace this with YOUR GitHub username
 const username = "lisyve1";
 
-// Fetch request to GitHub API
+// ========= Fetch request to GitHub API========/
 fetch(`https://api.github.com/users/${username}/repos`)
     .then(response => response.json()) // convert response to JSON
     .then(data => {
         const repositories = data; // store JSON in variable
+        console.log("Fetched repositories:", repositories); // This will log to the respository.
 
-        // Get the projects section
+        //=========  the projects section=====//
         const projectsList = document.querySelector('#projects ol');
 
         // Repositories to exclude from display
@@ -175,4 +176,16 @@ fetch(`https://api.github.com/users/${username}/repos`)
     })
     .catch(error => console.error("Error fetching repositories:", error));
 
+const movie_number = 1;
+// ========= Fetch request to Star Wars ========/
+fetch(`https://www.swapi.tech/api/films/${movie_number}`)
+    .then(response => response.json()) // convert response to JSON
+    .then(data => {
+        console.log("swapi data ===> ", data);
+        const movieTitle = document.getElementById('favorite_movie_title');
+        const movieDescription = document.getElementById('favorite_movie_description');
+        movieTitle.innerText = data.result.properties.title;
+        movieDescription.innerText = `Directed by ${data.result.properties.director}`;
+    })
+    .catch(error => console.error("Error fetching swapi data:", error));
 
