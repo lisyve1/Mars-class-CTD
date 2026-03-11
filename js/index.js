@@ -157,6 +157,7 @@ fetch(`https://api.github.com/users/${username}/repos`)
         const repositories = data; // store JSON in variable
         console.log("Fetched repositories:", repositories); // This will log to the respository.
 
+
         //=========  the projects section=====//
         const projectsList = document.querySelector('#projects ol');
 
